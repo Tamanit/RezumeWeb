@@ -12,6 +12,25 @@ h1 {
     width: 100%;
 }
 
+.body-block {
+    display: flex;
+    flex-direction: row;
+}
+
+.body-block__left-part {
+    width: fit-content;
+    min-width: 20%;
+    margin-right: 15px;
+    margin-top: 15px;
+}
+
+.body-block__right-part {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 /* end page block*/
 /* start resume */
 .resumes {
@@ -29,7 +48,7 @@ h1 {
 
     border: solid 4px hsl(100, 50%, 50%);
     min-width: 350px;
-    min-height: 150px;
+    min-height: 50px;
     width: fit-content;
     height: fit-content;
 
@@ -37,8 +56,10 @@ h1 {
 
 .resumes__user-block__string-data {
     display: flex;
+    gap: 10px;
     flex-direction: column;
     justify-content: space-around;
+    margin-left: 10px;
 }
 
 .resumes__user-block__photo {
@@ -49,6 +70,44 @@ h1 {
 
 .resumes__user-block__photo__img {
     width: 128px;
+    height: 128px;
 }
 
 /* end resume */
+/* start menu block */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu__block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2px;
+    border: solid 2px hsl(100, 50%, 50%);
+
+}
+
+.menu a:link {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu a:visited {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    color: #000;
+    text-decoration: none;
+}
+
+.menu a:active {
+    color: #000;
+    text-decoration: none;
+}
+/* end menu block */

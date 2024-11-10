@@ -6,32 +6,30 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use \Exception;
 
+
 class Person extends Model
 {
     protected $table = 'Person';
     public function Staff(): BelongsTo
     {
-        return $this->belongsTo(Staff::class, 'Staff');
+        if (isset($this->Staff)) {
+            return $this->belongsTo(Staff::class, 'Staff');
+        }
+        return $this->belongsTo(Staff::class);
     }
 
-    /**
-     * @throws Exception "Stage not set" if isset($this->Stage) == false
-     */
-    public function getFormatedStage(): string
+    public function getFormatedStage(): string|null
     {
         if (!isset($this->Stage)) {
-            throw new Exception('Stage not set');
+            return null;
         }
         return $this->Stage . $this->num2word($this->Stage, [' год', ' года', ' лет']);
     }
 
-    /**
-     * @throws Exception "Phone not set" if isset($this->Stage) == false
-     */
-    public function getMaskedPhone(): string
+    public function getMaskedPhone(): string|null
     {
         if (!isset($this->Phone)) {
-            throw new Exception('Phone not set');
+            return null;
         }
 
         $regMatch = [];
@@ -53,5 +51,30 @@ class Person extends Model
             2, 3, 4 => $words[1],
             default => $words[2],
         };
+    }
+
+    public static function mapFromArray(array $array): Person
+    {
+        $person = new Person();
+        if (array_key_exists('id', $array)) {
+            $person->id = $array['id'];
+        }
+        if (array_key_exists('FIO', $array)) {
+            $person->FIO = $array['FIO'];
+        }
+        if (array_key_exists('Staff', $array)) {
+            $person->Staff = $array['Staff'];
+        }
+        if (array_key_exists('Phone', $array)) {
+            $person->Phone = $array['Phone'];
+        }
+        if (array_key_exists('Stage', $array)) {
+            $person->Stage = $array['Stage'];
+        }
+        if (array_key_exists('Image', $array)) {
+            $person->Image = $array['Image'];
+        }
+
+        return $person;
     }
 }
