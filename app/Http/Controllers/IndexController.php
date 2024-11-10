@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Person;
 use \Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\DB;
 
@@ -17,7 +16,7 @@ class IndexController extends Controller
     public function show(): View
     {
         $header = 'Резюме и вакансии';
-        $users = Person::all();
+        $users = DB::table('Person')->get();
         foreach ($users as $user) {
             $user->Staff = DB::table('Staff')->where('Staff.id', '=', $user->Staff)->first()->staff;
             $user->Stage .= " " . $this->num2word($user->Stage, ['год', 'года', 'лет']);
