@@ -14,11 +14,11 @@
                 <span
                     class="resumes__user-block__text-attribute resumes__user-block__text-attribute__fio">Фамилия: {{$user->FIO}}</span>
                 <span
-                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__job">Профессия: {{$user->Staff}}</span>
+                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__job">Профессия: {{$user->Staff()->value('staff')}}</span>
                 <span
-                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__phone">Телефон: {{$user->Phone}}</span>
+                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__phone">Телефон: {{$user->getMaskedPhone()}}</span>
                 <span
-                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__stage">Стаж: {{$user->Stage}}</span>
+                    class="resumes__user-block__text-attribute resumes__user-block__text-attribute__stage">Стаж: {{$user->getFormatedStage()}}</span>
             </div>
         </div>
     @endforeach
