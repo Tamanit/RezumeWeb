@@ -1,0 +1,54 @@
+/* start page block*/
+h1 {
+    font-family: Roboto, Arial, serif;
+    font-size: 20pt;
+}
+
+.header {
+    background-color: hsl(100, 50%, 50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* end page block*/
+/* start resume */
+.resumes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    justify-content: space-evenly;
+    margin-top: 10px;
+}
+
+.resumes__user-block {
+    display: flex;
+    flex-direction: row;
+
+    border: solid 4px hsl(100, 50%, 50%);
+    min-width: 350px;
+    min-height: 150px;
+    width: fit-content;
+    height: fit-content;
+
+}
+
+.resumes__user-block__string-data {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.resumes__user-block__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resumes__user-block__photo__img {
+    width: 128px;
+}
+
+/* end resume */
