@@ -12,6 +12,11 @@ h1 {
     width: 100%;
 }
 
+.body__wrapper {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
 .body-block {
     display: flex;
     flex-direction: row;
@@ -42,19 +47,25 @@ h1 {
     margin-top: 10px;
 }
 
-.resumes__user-block {
+.resume {
     display: flex;
     flex-direction: row;
 
     border: solid 4px hsl(100, 50%, 50%);
-    min-width: 350px;
+    min-width: 370px;
     min-height: 50px;
     width: fit-content;
     height: fit-content;
 
 }
 
-.resumes__user-block__string-data {
+.resume__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume__string-data {
     display: flex;
     gap: 10px;
     flex-direction: column;
@@ -62,13 +73,7 @@ h1 {
     margin-left: 10px;
 }
 
-.resumes__user-block__photo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.resumes__user-block__photo__img {
+.resumes__photo__img {
     width: 128px;
     height: 128px;
 }
@@ -111,3 +116,60 @@ h1 {
     text-decoration: none;
 }
 /* end menu block */
+
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.resume__add {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    justify-content: center;
+    align-items: center;
+}
+
+.resume__add__form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: solid 2px hsl(100, 50%, 50%);
+}
+
+.resume__add__form__block:first-of-type {
+    margin-top: 5px;
+}
+
+
+.resume__add__form__block {
+    margin: 0 5px;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+
+.resume__add__form__block__submit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#submit {
+    border: none;
+    background: none;
+    width: 100%;
+}
+
+#submit:hover {
+    background-color: hsl(100, 50%, 50%);
+}
