@@ -30,4 +30,23 @@
             </span>
         @endif
     </div>
+        <div class="resume__buttons">
+            @if($showDetail)
+                <a
+                    data-csrf="{{csrf_token()}}"
+                    href="{{route('persons.show', $user->id)}}"
+                    class="resume__buttons__button button__detail"
+                >
+                    +
+                </a>
+            @else
+                <a data-csrf="{{csrf_token()}}"
+                   href="{{route('persons.edit', $user->id)}}"
+                   class="resume__buttons__button button__edit"
+                >
+                    🔧
+                </a>
+            @endif
+            <a data-csrf="{{csrf_token()}}" href="{{route('persons.show', $user->id)}}" class="resume__buttons__button button__delete">x</a>
+        </div>
 </div>

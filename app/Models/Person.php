@@ -10,6 +10,14 @@ use \Exception;
 class Person extends Model
 {
     protected $table = 'Person';
+
+    protected $fillable = [
+        'FIO',
+        'Staff',
+        'Phone',
+        'Stage',
+        'Image'
+    ];
     public function Staff(): BelongsTo
     {
         if (isset($this->Staff)) {

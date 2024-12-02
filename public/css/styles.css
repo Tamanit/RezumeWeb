@@ -48,15 +48,40 @@ h1 {
 }
 
 .resume {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    /*flex-direction: row;*/
 
     border: solid 4px hsl(100, 50%, 50%);
-    min-width: 370px;
+    min-width: 400px;
     min-height: 50px;
     width: fit-content;
     height: fit-content;
 
+}
+
+.resume__buttons__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 40px;
+}
+
+.resume__buttons {
+    display: flex;
+    justify-content: end;
+    width: 100%;
+}
+
+.button__delete:hover {
+    background-color: crimson;
+    color: white;
+}
+
+.button__detail:hover {
+    background-color: cornflowerblue;
+    color: white;
 }
 
 .resume__photo {
